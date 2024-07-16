@@ -1,0 +1,19 @@
+.modalWindow {
+    display: flex;
+    width: 50vw;
+    height: 50vh;
+    background-color: #fff;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper {
+    z-index: 9999;
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #0000000f;
+}
