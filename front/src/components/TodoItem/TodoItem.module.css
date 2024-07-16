@@ -1,3 +1,12 @@
 .todo {
+    padding: 1px 10px;
+    border-radius: 10px;
+    border: solid 1px #000;
+    font-size: 1.1rem;
+    font-family: fantasy;
     display: flex;
+    max-height: 1.5em;
+}
+.checkbox {
+    margin: 0.3em;
 }
