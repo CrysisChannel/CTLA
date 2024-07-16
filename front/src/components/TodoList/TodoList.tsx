@@ -11,7 +11,7 @@ const TodoList = () => {
     );
   }, []);
   function todosCreater(todos: TodoItem[]) {
-    return todos.map((todo) => <TodoItem todo={todo} />);
+    return todos.map((todo) => <TodoItem key={todo.id} todo={todo} />);
   }
   return <div className={styles.wrapper}>{todosCreater(todos)}</div>;
 };
