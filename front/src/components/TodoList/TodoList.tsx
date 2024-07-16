@@ -6,7 +6,7 @@ import TodoItem from "../TodoItem/TodoItem";
 const TodoList = () => {
   const [todos, setTodos] = useState<TodoItem[]>([]);
   useEffect(() => {
-    fetch(cfg.BACKEND_GET_DATA_URL + "/todos.json").then((res) =>
+    fetch(cfg.BACKEND_GET_DATA_URL + "/todos").then((res) =>
       res.json().then((data) => setTodos(data))
     );
   });
