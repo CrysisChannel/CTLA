@@ -9,7 +9,7 @@ const TodoList = () => {
     fetch(cfg.BACKEND_GET_DATA_URL + "/todos").then((res) =>
       res.json().then((data) => setTodos(data))
     );
-  });
+  }, []);
   function todosCreater(todos: TodoItem[]) {
     return todos.map((todo) => <TodoItem todo={todo} />);
   }
