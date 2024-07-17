@@ -22,7 +22,12 @@ app.post("/api/post/todos", (req, res) => {
             }
             let newInfo = todos.toString() ? JSON.parse(todos.toString()) : [];
             info = JSON.parse(info);
-            if(info.content){
+            if(info.id){
+                newInfo.forEach((todo, index) => {
+                    if(todo.id == info.id) newInfo[index].isCompleted = true;
+                });
+            }
+            else if(info.content){
                 info.id = newInfo.length;
                 info.isCompleted = false;
                 newInfo.push(info);
