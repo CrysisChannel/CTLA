@@ -22,7 +22,9 @@ app.post("/api/post/todos", (req, res) => {
             }
             let newInfo = todos.toString() ? JSON.parse(todos.toString()) : [];
             info = JSON.parse(info);
-            if(info.content && info.isCompleted){
+            if(info.content){
+                info.id = newInfo.length;
+                info.isCompleted = false;
                 newInfo.push(info);
             }
             fs.writeFile(__dirname + `/data/todos.json`, JSON.stringify(newInfo), (error) => {console.log(error)});  // выводим считанные данные
