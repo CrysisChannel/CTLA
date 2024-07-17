@@ -5,3 +5,6 @@
 - Vite
 - React
 - TypeScript
+
+ALT + H - HELP MENU
+ALT + A - CREATE NEW TODO
