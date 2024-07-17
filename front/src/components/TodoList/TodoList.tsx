@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import cfg from "../../CTLAConfig";
-import TodoItem from "../TodoItem/TodoItem";
+import TodoItem, { TodoItem as TodoItemType } from "../TodoItem/TodoItem";
 import ModalWindow from "../ModalWindow/ModalWindow";
+import cfg from "../../CTLAConfig";
 import styles from "./TodoList.module.css";
 
 const TodoList = () => {
   const contentInput = useRef<HTMLInputElement>(null);
-  const [todos, setTodos] = useState<TodoItem[]>([]);
+  const [todos, setTodos] = useState<TodoItemType[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
 
@@ -29,10 +29,10 @@ const TodoList = () => {
       res.json().then((data) => setTodos(data))
     );
   }
-  function todosCreater(todos: TodoItem[]) {
+  function todosCreater(todos: TodoItemType[]) {
     return todos.map((todo) => <TodoItem key={todo.id} todo={todo} />);
   }
-  function clickHandler(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+  function clickHandler() {
     if (!contentInput.current) return;
     setShowAddModal(false);
     fetch(cfg.BACKEND_POST_DATA_URL + "/todos", {

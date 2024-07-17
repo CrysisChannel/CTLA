@@ -2,7 +2,7 @@ import { useState } from "react";
 import cfg from "../../CTLAConfig";
 import styles from "./TodoItem.module.css";
 
-type TodoItem = {
+export type TodoItem = {
   id: number;
   isCompleted: boolean;
   content: string;

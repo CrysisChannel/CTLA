@@ -32,7 +32,7 @@ app.post("/api/post/todos", (req, res) => {
                 info.isCompleted = false;
                 newInfo.push(info);
             }
-            fs.writeFile(__dirname + `/data/todos.json`, JSON.stringify(newInfo), (error) => {console.log(error)});  // выводим считанные данные
+            fs.writeFile(__dirname + `/data/todos.json`, JSON.stringify(newInfo), (error) => {console.log(error)}); 
             res.end();
         });
     });
